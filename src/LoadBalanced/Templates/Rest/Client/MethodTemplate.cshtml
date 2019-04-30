@@ -12,7 +12,7 @@
 @{ 
     var basePath = Model.CodeModel.BaseUrl?.Trim('/');
     var path = Model.Url.TrimStart('/');
-    var endpoint = string.Concat(basePath, path);
+    var endpoint = string.Concat(path);
 }
 
 @if (!string.IsNullOrWhiteSpace(Model.Description) || !string.IsNullOrEmpty(Model.Summary))
