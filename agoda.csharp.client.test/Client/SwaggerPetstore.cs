@@ -10,9 +10,9 @@ using Microsoft.Rest.Serialization;
 using Agoda.RoundRobin;
 using Agoda.RoundRobin.Constants;
 using Newtonsoft.Json;
-using Agoda.Test.Client.Models;
+using Agoda.Csharp.Client.Test.Models;
 
-namespace Agoda.Test.Client
+namespace Agoda.Csharp.Client.Test
 {
     using Agoda.RoundRobin;
     using Microsoft.Rest;
@@ -226,7 +226,7 @@ namespace Agoda.Test.Client
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "v2/pet/{petId}",
+                                        RestUrl = "https://petstore.swagger.io/v2/pet/{petId}",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                     };
@@ -410,7 +410,7 @@ namespace Agoda.Test.Client
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "/v2/store/order/{orderId}",
+                                        RestUrl = "https://petstore.swagger.io/v2/store/order/{orderId}",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                     };

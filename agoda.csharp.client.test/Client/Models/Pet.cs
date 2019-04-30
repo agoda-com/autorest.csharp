@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace Agoda.Test.Client.Models
+namespace Agoda.Csharp.Client.Test.Models
 {
     using Microsoft.Rest;
     using Newtonsoft.Json;

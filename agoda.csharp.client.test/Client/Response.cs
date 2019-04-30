@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-namespace Agoda.Test.Client
+namespace Agoda.Csharp.Client.Test
 {
     using System.Collections;
 	public class Response

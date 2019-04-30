@@ -1,13 +1,11 @@
 using System;
 using System.Collections.Generic;
 using Agoda.RoundRobin;
-using Agoda.Test.Client;
 using NUnit.Framework;
-using System.Collections.Generic;
 using System.Linq;
-using Agoda.Test.Client.Models;
+using Agoda.Csharp.Client.Test.Models;
 
-namespace Tests
+namespace Agoda.Csharp.Client.Test
 {
     public class Tests
     {
@@ -59,7 +57,7 @@ namespace Tests
         }
         
         [Test]
-        public void TestShouldSerializeDate()
+        public void TestShouldSerializeNullable()
         {
             var config = new ApiBaseConfig()
             {

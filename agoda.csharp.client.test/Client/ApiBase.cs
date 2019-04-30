@@ -13,7 +13,7 @@ using Agoda.RoundRobin.Constants;
 using Microsoft.Rest.Serialization;
 using System.Linq;
 
-namespace Agoda.Test.Client
+namespace Agoda.Csharp.Client.Test
 {
     using Agoda.RoundRobin;
     using Microsoft.Rest;

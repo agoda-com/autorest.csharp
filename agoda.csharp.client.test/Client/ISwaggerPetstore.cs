@@ -9,9 +9,9 @@
     using Agoda.RoundRobin;
     using Agoda.RoundRobin.Constants;
     using Newtonsoft.Json;
-    using Agoda.Test.Client.Models;
+    using Agoda.Csharp.Client.Test.Models;
 
-namespace Agoda.Test.Client
+namespace Agoda.Csharp.Client.Test
 {
     using Agoda.RoundRobin;
     using Microsoft.Rest;

@@ -1,21 +1,21 @@
 using System;
 using System.Linq;
 
-namespace Agoda.Test.Client.Models
+namespace Agoda.Csharp.Client.Test.Models
 {
     using Newtonsoft.Json;
 
-    public partial class Tag
+    public partial class Category
     {
         /// <summary>
-        /// Initializes a new instance of the Tag class.
+        /// Initializes a new instance of the Category class.
         /// </summary>
-        public Tag() { }
+        public Category() { }
 
         /// <summary>
-        /// Initializes a new instance of the Tag class.
+        /// Initializes a new instance of the Category class.
         /// </summary>
-        public Tag(long? id = default(long?), string name = default(string))
+        public Category(long? id = default(long?), string name = default(string))
         {
             Id = id;
             Name = name;

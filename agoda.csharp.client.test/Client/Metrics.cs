@@ -1,8 +1,8 @@
-namespace Agoda.Test.Client
+namespace Agoda.Csharp.Client.Test
 {
     public static class Metrics
     {
-        public const string Prefix = "Agoda.Test.Client.API.";
+        public const string Prefix = "Agoda.Csharp.Client.Test.API.";
         public const string AddPet = Prefix + "AddPet";
         public const string UpdatePet = Prefix + "UpdatePet";
         public const string FindPetsByStatus = Prefix + "FindPetsByStatus";
