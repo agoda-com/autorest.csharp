@@ -37,10 +37,9 @@ namespace Tests
             Assert.AreEqual(result.Category.Name, "Dog");
             Assert.IsTrue(TagEqual(result.Tags, expectedTag));
         }
-        
-        
+
         [Test]
-        public void TestShouldSerializeDixtionary()
+        public void TestShouldSerializeDateTime()
         {
             var config = new ApiBaseConfig()
             {
@@ -53,13 +52,32 @@ namespace Tests
                 timeout = TimeSpan.FromMinutes(1)
             };
             var client = new SwaggerPetstore(config);
-            var result = client.GetPetByIdAsync(1).Result;
-            List<Tag> expectedTag = new List<Tag>();
-            expectedTag.Add(new Tag(2, "Beagle"));
-            Assert.AreEqual(result.Id, 1);
-            Assert.AreEqual(result.Category.Name, "Dog");
-            Assert.IsTrue(TagEqual(result.Tags, expectedTag));
+            var result = client.GetOrderByIdAsync(1).Result;
+            // 2019-04-30T04:36:59.348Z
+            const long timeInTicks = 636921958193480000L;
+            Assert.AreEqual(new DateTime(timeInTicks), result.ShipDate);
         }
+        
+        [Test]
+        public void TestShouldSerializeDate()
+        {
+            var config = new ApiBaseConfig()
+            {
+                settings = new List<ServerSettings>()
+                {
+                    new ServerSettings("http://localhost:8443", 100)
+                },
+                name = "petstore",
+                retryCount = 0,
+                timeout = TimeSpan.FromMinutes(1)
+            };
+            var client = new SwaggerPetstore(config);
+            var result = client.GetOrderByIdAsync(1).Result;
+            // 2019-04-30T04:36:59.348Z
+            const long timeInTicks = 636921958193480000L;
+            Assert.AreEqual(new DateTime(timeInTicks), result.ShipDate);
+        }
+
 
         class TagComparer : IEqualityComparer<Tag>
         {

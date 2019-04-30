@@ -410,7 +410,7 @@ namespace Agoda.Test.Client
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/store/order/{orderId}",
+                                        RestUrl = "/v2/store/order/{orderId}",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                     };
