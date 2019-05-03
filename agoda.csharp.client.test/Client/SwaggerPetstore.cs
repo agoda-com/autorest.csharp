@@ -61,7 +61,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/pet",
+                                        RestUrl = "/v2/pet",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                         , Body = body
@@ -97,7 +97,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/pet",
+                                        RestUrl = "/v2/pet",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                         , Body = body
@@ -146,7 +146,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/pet/findByStatus",
+                                        RestUrl = "/v2/pet/findByStatus",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                     };
@@ -196,7 +196,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/pet/findByTags",
+                                        RestUrl = "/v2/pet/findByTags",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                     };
@@ -226,7 +226,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/pet/{petId}",
+                                        RestUrl = "/v2/pet/{petId}",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                     };
@@ -254,7 +254,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/pet/{petId}",
+                                        RestUrl = "/v2/pet/{petId}",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                     };
@@ -281,7 +281,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/pet/{petId}",
+                                        RestUrl = "/v2/pet/{petId}",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                     };
@@ -310,7 +310,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/pet/{petId}/uploadImage",
+                                        RestUrl = "/v2/pet/{petId}/uploadImage",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                     };
@@ -338,7 +338,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/store/inventory",
+                                        RestUrl = "/v2/store/inventory",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                     };
@@ -370,7 +370,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/store/order",
+                                        RestUrl = "/v2/store/order",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                         , Body = body
@@ -410,7 +410,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/store/order/{orderId}",
+                                        RestUrl = "/v2/store/order/{orderId}",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                     };
@@ -444,7 +444,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/store/order/{orderId}",
+                                        RestUrl = "/v2/store/order/{orderId}",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                     };
@@ -478,7 +478,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/user",
+                                        RestUrl = "/v2/user",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                         , Body = body
@@ -510,7 +510,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/user/createWithArray",
+                                        RestUrl = "/v2/user/createWithArray",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                         , Body = body
@@ -542,7 +542,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/user/createWithList",
+                                        RestUrl = "/v2/user/createWithList",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                         , Body = body
@@ -582,7 +582,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/user/login",
+                                        RestUrl = "/v2/user/login",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                     };
@@ -606,7 +606,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/user/logout",
+                                        RestUrl = "/v2/user/logout",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                     };
@@ -639,7 +639,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/user/{username}",
+                                        RestUrl = "/v2/user/{username}",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                     };
@@ -679,7 +679,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/user/{username}",
+                                        RestUrl = "/v2/user/{username}",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                         , Body = body
@@ -715,7 +715,7 @@ namespace Agoda.Csharp.Client.Test
             var requestParameters = new RequestParameters
                                     {
                                         HttpVerb = verb,
-                                        RestUrl = "https://petstore.swagger.io/v2/user/{username}",
+                                        RestUrl = "/v2/user/{username}",
                                         CustomHeaders = _customHeaders,
                                         QueryParameters = queryParameters
                                     };
