@@ -13,18 +13,17 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-### Temporary: Turn `modelAsString` into `oldModelAsString` in order to maintain old behavior for now (Use `--opt-in-extensible-enums` to opt in)
-
-``` yaml !$(opt-in-extensible-enums)
-directive:
-  - from: swagger-document
-    where: $..*[?(typeof @.modelAsString === "boolean" && typeof @.oldModelAsString !== "boolean")]
-    transform: $.oldModelAsString = $.modelAsString
-```
-
-## Help
+# AutoRest extension configuration: Testing
 
 ``` yaml
 help-content:
   .\build\generate.ps1 -> To generate test clients
 ```
+
+## Help
+=======
+npm install -g autorest
+autorest --use=path-to-this-repo --csharp --input-file=swagger-input-file --output-folder=path-to-output-folder --namespace=Agoda.Name.You.Like
+```
+
+Will update more later.
