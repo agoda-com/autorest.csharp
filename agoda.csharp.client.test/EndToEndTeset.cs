@@ -96,6 +96,28 @@ namespace Agoda.Csharp.Client.Test
             
             Assert.AreEqual(200, result.HttpCode);
         }
+        
+               
+        [Test]
+        public void TestShouldGetCorrectHttpCode()
+        {
+            var config = new ApiBaseConfig()
+            {
+                settings = new List<ServerSettings>()
+                {
+                    new ServerSettings("http://localhost:8443", 100)
+                },
+                name = "petstore",
+                retryCount = 0,
+                timeout = TimeSpan.FromMinutes(1)
+            };
+            var pet = new Pet("dog", new List<string>(), null, null, new List<Tag>(), "good");
+            var client = new SwaggerPetstore(config);
+            var result = client.AddPetAsync(pet).Result;
+            
+            Assert.AreEqual(200, result.HttpCode);
+            Assert.AreEqual(true, result.IsSuccessful);
+        }
 
         class TagComparer : IEqualityComparer<Tag>
         {
