@@ -8,9 +8,10 @@ platform:
 install:
   - git submodule update --init --recursive
   - ps: Install-Product node $env:nodejs_version $env:platform
-  - npm install
-  - npm install -g autorest
-  - npm install -g gulp
+#  - npm install
+#  - npm install -g autorest
+  - npm install -g yarn
+  - yarn add dotnet-sdk-2.0.0
 
 
 # version format
