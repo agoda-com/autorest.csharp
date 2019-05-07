@@ -1,0 +1,15 @@
+# version format
+version: 1.0.{build}-{branch}
+
+# branches to build
+branches:
+  # whitelist
+  only:
+    - master
+    - tests
+
+# image to use      
+image: Visual Studio 2017
+
+build_script:
+  - ps: .\build\testpackage.ps1
