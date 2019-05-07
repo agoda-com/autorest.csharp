@@ -1,5 +1,5 @@
 "Clearing old packages"
-rmrf *gz
+
 # npm version patch -f
 $currentBranch = git rev-parse --abbrev-ref HEAD
 If ($currentBranch -eq "tests") {
