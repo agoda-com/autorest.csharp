@@ -57,7 +57,7 @@ namespace Agoda.Csharp.Client.Test
         }
         
         [Test]
-        public void TestShouldSerializeNullable()
+        public void TestShouldBeAbleToMakePostCalls()
         {
             var config = new ApiBaseConfig()
             {
@@ -69,13 +69,33 @@ namespace Agoda.Csharp.Client.Test
                 retryCount = 0,
                 timeout = TimeSpan.FromMinutes(1)
             };
+            var pet = new Pet("dog", new List<string>(), 2, null, new List<Tag>(), "good");
             var client = new SwaggerPetstore(config);
-            var result = client.GetOrderByIdAsync(1).Result;
-            // 2019-04-30T04:36:59.348Z
-            const long timeInTicks = 636921958193480000L;
-            Assert.AreEqual(new DateTime(timeInTicks), result.ShipDate);
+            var result = client.AddPetAsync(pet).Result;
+            
+            Assert.AreEqual(200, result.HttpCode);
         }
 
+                
+        [Test]
+        public void TestShouldBeAbleToMakePostCallsWithNullValues()
+        {
+            var config = new ApiBaseConfig()
+            {
+                settings = new List<ServerSettings>()
+                {
+                    new ServerSettings("http://localhost:8443", 100)
+                },
+                name = "petstore",
+                retryCount = 0,
+                timeout = TimeSpan.FromMinutes(1)
+            };
+            var pet = new Pet("dog", new List<string>(), null, null, new List<Tag>(), "good");
+            var client = new SwaggerPetstore(config);
+            var result = client.AddPetAsync(pet).Result;
+            
+            Assert.AreEqual(200, result.HttpCode);
+        }
 
         class TagComparer : IEqualityComparer<Tag>
         {
