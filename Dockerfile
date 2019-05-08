@@ -1,4 +1,4 @@
 FROM azuresdk/autorest
 
-npm install
+RUN npm install
 
