@@ -1,6 +1,6 @@
 "Clearing old packages"
 
-# npm version patch -f
+npm install -g gulp
 $currentBranch = git rev-parse --abbrev-ref HEAD
 If ($currentBranch -eq "tests") {
 	$testProject = "agoda.csharp.client.test\agoda.csharp.client.test.csproj"
