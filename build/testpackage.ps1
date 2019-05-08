@@ -1,13 +1,18 @@
 "Clearing old packages"
 
-npm install -g gulp
+npm install
+npm install -g gulp autorest
+
 $currentBranch = git rev-parse --abbrev-ref HEAD
-If ($currentBranch -eq "tests") {
+
+"Building branch $currentBranch"
+
+#If ($currentBranch -eq "tests") {
 	$testProject = "agoda.csharp.client.test\agoda.csharp.client.test.csproj"
-}
-Else {
-	 $testProject =	"autorest.csharp.test\autorest.csharp.test.csproj"
-}
+#}
+#Else {
+#	 $testProject =	"autorest.csharp.test\autorest.csharp.test.csproj"
+#}
 
 dotnet sln remove $testProject
 dotnet build
@@ -18,7 +23,7 @@ $gz = $b[$b.length - 1]
 dotnet sln add $testProject 
 
 # autorest --reset 
-# autorest --use=http://localhost:8080/$gz --csharp --input-file=..\swagger.json --output-folder=.\agoda.csharp.client.test\Client --namespace=Agoda.Csharp.Client.Test
+ autorest --use=$gz --csharp --input-file=..\swagger.json --output-folder=.\agoda.csharp.client.test\Client --namespace=Agoda.Csharp.Client.Test
 # This will create a tar file that can be used in conjunction with the autorest generate command to generate clients for running tests
 dotnet test
 # rmrf agoda.csharp.client.test
