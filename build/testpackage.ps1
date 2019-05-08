@@ -1,7 +1,8 @@
 "Clearing old packages"
 
 npm install
-npm install -g gulp autorest
+npm install -g gulp 
+npm install -g autorest
 
 $currentBranch = git rev-parse --abbrev-ref HEAD
 
