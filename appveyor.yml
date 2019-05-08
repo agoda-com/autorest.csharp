@@ -1,3 +1,8 @@
+# version format
+version: 1.0.{build}-{branch}
+# image to use      
+image: Visual Studio 2017
+
 # environment
 environment:
   nodejs_version: "8"
@@ -6,16 +11,11 @@ platform:
   - x86
 
 install:
+  - docker 
   - git submodule update --init --recursive
-  - ps: Install-Product node $env:nodejs_version $env:platform
-#  - npm install
-#  - npm install -g autorest
-  - npm install -g yarn
-  - yarn add dotnet-sdk-2.0.0
 
-
-# version format
-version: 1.0.{build}-{branch}
+build_script:
+  - docker build -t agoda/autorest
 
 # branches to build
 branches:
@@ -24,8 +24,3 @@ branches:
     - master
     - tests
 
-# image to use      
-image: Visual Studio 2017
-
-build_script:
-  - ps: .\build\testpackage.ps1
