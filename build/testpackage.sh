@@ -1,4 +1,5 @@
-"Clearing old packages"
+#!/bin/bash -xe
+echo "Clearing old packages"
 
 npm install
 npm install -g gulp 
@@ -13,9 +14,8 @@ $testProject = "agoda.csharp.client.test\agoda.csharp.client.test.csproj"
 dotnet sln remove $testProject
 dotnet build
 $c = npm pack
-$b = $c -split "\n"
-$gz = $b[$b.length - 1]
-"Package created $gz"
+gz=${c##*$'\n'}
+echo "Package created $gz"
 dotnet sln add $testProject 
 
 # autorest --reset 
