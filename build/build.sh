@@ -9,7 +9,7 @@ npm install -g autorest
 currentBranch=$(git rev-parse --abbrev-ref HEAD)
 echo "Building branch $currentBranch"
 
-testProject="agoda.csharp.client.test\\agoda.csharp.client.test.csproj"
+testProject="agoda.csharp.client.test/agoda.csharp.client.test.csproj"
 
 dotnet sln remove $testProject
 dotnet build
