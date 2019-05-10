@@ -1,5 +1,5 @@
 {
-  "name": "@microsoft.azure/autorest.csharp",
+  "name": "agoda-extension",
   "version": "2.3.0",
   "description": "The C# extension for classic generators in AutoRest.",
   "scripts": {
