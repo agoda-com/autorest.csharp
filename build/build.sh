@@ -20,6 +20,6 @@ dotnet build
 #dotnet sln add $testProject 
 
 # autorest --reset 
-autorest --use=. --csharp --input-file=..\swagger.json --output-folder=.\agoda.csharp.client.test\Client --namespace=Agoda.Csharp.Client.Test
+autorest --use=. --csharp --input-file=./swagger/swagger.json --output-folder=./agoda.csharp.client.test/Client --namespace=Agoda.Csharp.Client.Test
 
 dotnet test
