@@ -11,7 +11,7 @@
 
 @{ 
     var basePath = Model.CodeModel.BaseUrl?.Trim('/');
-    var path = new Uri(basePath);
+    var path = new Uri(basePath).AbsolutePath;
     var endpoint = string.Concat(path, Model.Url);
 }
 
