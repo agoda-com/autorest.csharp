@@ -18,7 +18,7 @@ name=$(npm pack)
 package=${name##*$'\n'}
 echo "Package created $package"
 dotnet sln add $testProject 
-
+rm -rf ./agoda.csharp.client.test/Client
 autorest --reset 
 autorest --use=http://localhost:8085/$package --csharp --input-file=./swagger/swagger.json --output-folder=./agoda.csharp.client.test/Client --namespace=Agoda.Csharp.Client.Test
 # good agent hk-unix59-19
