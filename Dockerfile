@@ -43,8 +43,8 @@ ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 RUN npm config set strict-ssl false
 RUN node -v
-RUN npm install npm@6.12.0 -g
-RUN npm install -g autorest
+RUN npm install npm -g
+RUN npm install -g autorest@latest
 RUN npm i -g eol-converter-cli
 
 COPY package.json /tmp/package.json
