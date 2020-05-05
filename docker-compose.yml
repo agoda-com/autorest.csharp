@@ -10,6 +10,8 @@ services:
     ### you can change .nupkg to .zip to view generated .dll file inside the package
     # volumes:
     #   - C:/New folder/output4:/app/output
+    #   - C:/New folder/input:/app/input
+    #   - C:/fx:/app/fx
     environment: 
       ENV_YML_FILE_URL: ${SWAGGER_URL}
       ENV_OUTPUT_PATH: "/app/output"
@@ -18,10 +20,12 @@ services:
       ENV_NUGET_KEY: ${NUGET_KEY}
       ENV_SHOULD_PUSH_NUGET: ${SHOULD_UPLOAD_TO_NUGET} 
       ENV_USE_DATETIMEOFFSET: ${USE_DATETIMEOFFSET}
+      ENV_USE_OPENAPI_V3: ${USE_USE_OPENAPI_V3}
       # To test on local
-      #ENV_YML_FILE_URL: "https://github.agodadev.io/raw/IT-Platform/customer-api/7edb9cafd6482334558be1f523e67a4318d364c3/src/main/resources/openapi.yml?token=AAAAAYM5MMNJGIJKNLLRQH26TVPLY"
-      #ENV_NAMESPACE: Agoda.CustomerApi.Client.V2
-      #ENV_VERSION: 2.0.25
-      #ENV_NUGET_KEY: "5a77e143-0230-4db3-b23c-726b91f2a347"
-      #ENV_SHOULD_PUSH_NUGET: "false"
+      # ENV_YML_FILE_URL: "http://hk-qabapi-2a03:8080/api-docs/swagger.yaml"
+      # ENV_NAMESPACE: Agoda.BookingApi.Client.V2
+      # ENV_VERSION: 2.0.25
+      # ENV_NUGET_KEY: "5a77e143-0230-4db3-b23c-726b91f2a347"
+      # ENV_SHOULD_PUSH_NUGET: "false"
+      # ENV_USE_DATETIMEOFFSET: "true"
     command: /app/build/create-project.sh

@@ -2,20 +2,27 @@
 
 OUTPUT_PATH=${ENV_OUTPUT_PATH}
 NAMESPACE=${ENV_NAMESPACE}
-INPUT_PATH=./input/swagger.yml
-INPUT_TMP=./input/swagger-tmp.yml
+INPUT_PATH=./input/swagger.yaml
 
 mkdir -p input
 rm -rf input/*
 rm -rf $OUTPUT_PATH/*
 curl -o $INPUT_PATH ${ENV_YML_FILE_URL}
 
-eolConverter "./input/swagger.yml"
+eolConverter "./input/swagger.yaml"
 
-if [ "$ENV_USE_DATETIMEOFFSET" = "true" ]; then
-  autorest --v3 --use=/app --csharp --output-folder=$OUTPUT_PATH --namespace=$NAMESPACE --input-file=$INPUT_PATH --add-credentials --use-datetimeoffset
+if [ "$ENV_USE_OPENAPI_V3" = "true" ]; then
+  if [ "$ENV_USE_DATETIMEOFFSET" = "true" ]; then
+    autorest --v3 --use=/app --csharp --output-folder=$OUTPUT_PATH --namespace=$NAMESPACE --input-file=$INPUT_PATH --add-credentials --use-datetimeoffset --debug
+  else
+    autorest --v3 --use=/app --csharp --output-folder=$OUTPUT_PATH --namespace=$NAMESPACE --input-file=$INPUT_PATH --add-credentials --debug
+  fi
 else
-  autorest --v3 --use=/app --csharp --output-folder=$OUTPUT_PATH --namespace=$NAMESPACE --input-file=$INPUT_PATH --add-credentials
+  if [ "$ENV_USE_DATETIMEOFFSET" = "true" ]; then
+    autorest --use=/app --csharp --output-folder=$OUTPUT_PATH --namespace=$NAMESPACE --input-file=$INPUT_PATH --add-credentials --use-datetimeoffset --debug
+  else
+    autorest --use=/app --csharp --output-folder=$OUTPUT_PATH --namespace=$NAMESPACE --input-file=$INPUT_PATH --add-credentials --debug
+  fi
 fi
 
 dotnet new classlib -n $NAMESPACE -o $OUTPUT_PATH
