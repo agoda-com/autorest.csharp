@@ -2,6 +2,7 @@
 
 OUTPUT_PATH=${ENV_OUTPUT_PATH}
 NAMESPACE=${ENV_NAMESPACE}
+PACKAGE_NAME=${ENV_PACKAGE_NAME}
 INPUT_PATH=./input/swagger.yaml
 
 mkdir -p input
@@ -47,16 +48,16 @@ cat >NuGet.config <<EOL
 </configuration>
 EOL
 
-dotnet add $OUTPUT_PATH/$NAMESPACE.csproj package Newtonsoft.Json -v 11.0.2
-dotnet add $OUTPUT_PATH/$NAMESPACE.csproj package Microsoft.Rest.ClientRuntime -v 2.3.21
-dotnet add $OUTPUT_PATH/$NAMESPACE.csproj package Agoda.Frameworks.Http -v 3.0.75
 dotnet add $OUTPUT_PATH/$NAMESPACE.csproj package Microsoft.Extensions.Http.Polly
-rm $OUTPUT_PATH/Class1.cs
+dotnet add $OUTPUT_PATH/$PACKAGE_NAME.csproj package Newtonsoft.Json -v 11.0.2
+dotnet add $OUTPUT_PATH/$PACKAGE_NAME.csproj package Microsoft.Rest.ClientRuntime -v 2.3.21
+dotnet add $OUTPUT_PATH/$PACKAGE_NAME.csproj package Agoda.Frameworks.Http -v 3.0.75
+dotnet add $OUTPUT_PATH/$PACKAGE_NAME.csproj package Microsoft.Extensions.Http.Pollyrm $OUTPUT_PATH/Class1.cs
 
-dotnet pack $OUTPUT_PATH/$NAMESPACE.csproj -p:PackageVersion=$ENV_VERSION
+dotnet pack $OUTPUT_PATH/$PACKAGE_NAME.csproj -p:PackageVersion=$ENV_VERSION
 
 if [ "$ENV_SHOULD_PUSH_NUGET" = "true" ]; then
-  dotnet nuget push $OUTPUT_PATH/bin/Debug/$NAMESPACE.$ENV_VERSION.nupkg -k $ENV_NUGET_KEY -s https://bk-lib-nuget.agodadev.io/api/odata
+  dotnet nuget push $OUTPUT_PATH/bin/Debug/$PACKAGE_NAME.$ENV_VERSION.nupkg -k $ENV_NUGET_KEY -s https://bk-lib-nuget.agodadev.io/api/odata
 else
   echo "Nuget is not pushed because ENV_SHOULD_PUSH_NUGET is set to $ENV_SHOULD_PUSH_NUGET"
 fi
