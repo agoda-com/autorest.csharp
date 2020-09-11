@@ -49,7 +49,7 @@ namespace @Settings.Namespace
         {
             if (loadBalancingConfig == null)
             {
-                return await action(1);
+                return await action(1).ConfigureAwait(false);
             }
 
             var retryResults = await loadBalancingConfig.UrlResourceManager.ExecuteAsyncWithDiag(async (source, attemptCount) =>
@@ -58,7 +58,7 @@ namespace @Settings.Namespace
 
                 try
                 {
-                    var operationResponse = await action(attemptCount);
+                    var operationResponse = await action(attemptCount).ConfigureAwait(false);
                     if (IsTransientHttpStatusCode(operationResponse.Response.StatusCode))
                     {
                         throw new Frameworks.Http.TransientHttpRequestException(
@@ -76,7 +76,7 @@ namespace @Settings.Namespace
                             operationResponse.Response);
                     }
 
-                    if (loadBalancingConfig.IsErrorResponse != null && loadBalancingConfig.IsErrorResponse(operationResponse.Response, await operationResponse.Response.Content.ReadAsStringAsync()))
+                    if (loadBalancingConfig.IsErrorResponse != null && loadBalancingConfig.IsErrorResponse(operationResponse.Response, await operationResponse.Response.Content.ReadAsStringAsync().ConfigureAwait(false)))
                     {
                         throw new Frameworks.Http.HttpErrorResponseException(
                             operationResponse.Request.RequestUri.AbsolutePath,
@@ -100,7 +100,7 @@ namespace @Settings.Namespace
                     throw;
                 }
 
-            }, loadBalancingConfig.ShouldRetryPredicate);
+            }, loadBalancingConfig.ShouldRetryPredicate).ConfigureAwait(false);
 
             var result = retryResults.Last();
             if (result.IsError)
