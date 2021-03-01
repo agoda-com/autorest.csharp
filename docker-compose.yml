@@ -24,11 +24,11 @@ services:
       ENV_USE_DATETIMEOFFSET: ${USE_DATETIMEOFFSET}
       ENV_USE_OPENAPI_V3: ${USE_USE_OPENAPI_V3}
       # Uncomment these lines to test on local
-      ENV_YML_FILE_URL: "http://10.118.177.166/swagger/v1/swagger.json"
-      ENV_NAMESPACE: Agoda.BookingApi.Client.V2
-      ENV_VERSION: 2.0.25
-      ENV_NUGET_KEY: "5a77e143-0230-4db3-b23c-726b91f2a347"
-      ENV_SHOULD_PUSH_NUGET: "false"
-      ENV_USE_DATETIMEOFFSET: "false"
-      ENV_USE_OPENAPI_V3: "true"
+      #ENV_YML_FILE_URL: "http://10.118.177.166/swagger/v1/swagger.json"
+      #ENV_NAMESPACE: Agoda.BookingApi.Client.V2
+      #ENV_VERSION: 2.0.25
+      #ENV_NUGET_KEY: "5a77e143-0230-4db3-b23c-726b91f2a347"
+      #ENV_SHOULD_PUSH_NUGET: "false"
+      #ENV_USE_DATETIMEOFFSET: "false"
+      #ENV_USE_OPENAPI_V3: "true"
     command: /app/build/create-project.sh
